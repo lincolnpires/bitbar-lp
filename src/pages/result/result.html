@@ -1,0 +1,78 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>BitBar</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<style>
+	ion-card.adv-map p {
+		font-size: 0.7em !important;
+	}
+
+	button[fab].fab-map {
+		top: calc(100% - 35px);
+		z-index: 50;
+	}
+
+	.item-bold {
+		font-weight: bold;
+	}
+
+	ion-content.cards-bg {
+		background-color: #f4f4f7;
+	}
+
+	h2.venue-title {
+		text-overflow: ellipsis;
+	}
+
+	.no-bars {
+		margin-top: 20vh;
+		text-align: center;
+	}
+
+	.no-bars ion-icon {
+		font-size: 30vh;
+	}
+</style>
+
+<ion-content padding>
+
+	<div class="no-bars" *ngIf="venueInfo.noResults" (click)="navCtrl.pop()">
+		<ion-icon name='sad'></ion-icon>
+		<h1>Nenhum Bar encontrado</h1>
+		<p>Selecione outra região da sua cidade e tente novamente</p>
+	</div>
+
+	<ion-card class="adv-map" *ngIf="venueInfo.exists">
+		<div style="position: relative; min-height: 267px">
+			<img [src]="venueInfo.image" />
+			<!--button dark fab fab-right fab-top class="fab-map" *ngIf="uberInfo?.uberX" (click)="openUber('nav')">
+      <ion-icon name='car'></ion-icon>
+    </button-->
+		</div>
+
+		<ion-item>
+			<h1 class="venue-title">{{venueInfo.name}}</h1>
+			<p>{{venueInfo.address}}</p>
+		</ion-item>
+
+		<ion-item>
+			<span item-left>
+      {{venueInfo.price}}
+    </span>
+			<button ion-button color="primary" ion-icon dark clear item-right (click)="openFoursquare()">
+      <ion-icon name="logo-foursquare"></ion-icon>
+      Ver no Foursquare
+    </button>
+		</ion-item>
+
+		<ion-item *ngIf="uberInfo.length > 0">
+			<span item-left *ngIf="uberInfo?.uberX">{{uberInfo?.uberX}} <small>de uberX</small></span>
+			<button ion-button color="primary" ion-icon dark clear item-right (click)="openUber('link')">
+      <ion-icon name="car"></ion-icon>
+      Pedir Uber
+    </button>
+		</ion-item>
+	</ion-card>
+</ion-content>

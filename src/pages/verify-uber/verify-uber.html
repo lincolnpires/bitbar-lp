@@ -1,0 +1,33 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>BitBar</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<style>
+	.verify-uber-explain {
+		padding: 0 10px;
+		text-align: center;
+	}
+
+	.verify-uber-explain button {
+		margin: 25px 0 20px;
+	}
+
+	.have-uber {
+		text-decoration: none;
+		color: #555;
+	}
+</style>
+<ion-content>
+	<img src="img/uber-hero.png">
+	<div class="verify-uber-explain">
+		<h2>Instale o Uber agora mesmo</h2>
+
+		<p>O BitBar usa o Uber para que você consiga uma viagem confiável para os bares em minutos, ao toque de um botao.</p>
+		<p>Usando o código <strong>BITBAR</strong> você ganha até R$20 de desconto na sua primeira viagem</p>
+
+		<button block large dark (click)="openApplyPromo()">Cadastre-se no Uber</button>
+		<a href="#" class="have-uber" (click)="navCtrl.pop()">Já instalei o Uber no meu smartphone</a>
+	</div>
+</ion-content>

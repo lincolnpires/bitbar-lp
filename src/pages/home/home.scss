@@ -1,0 +1,72 @@
+#map_canvas {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+
+#map_canvas:after {
+    width: 50vh;
+    height: 50vh;
+    display: block;
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25vh 0 0 -25vh;
+    background: rgba(242, 75, 24, 0.5);
+    background-size: cover;
+    pointer-events: none;
+    border-radius: 100%;
+    border: 4px solid black;
+}
+
+.info {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 2px #fff;
+    color: #000;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.pin-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.pin {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    height: 93px;
+    width: 86px;
+    margin: -46px 0 0 -42px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.float-button {
+    width: 100vw;
+    box-sizing: border-box;
+    height: 10vh;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 8vh;
+}
+
+.float-button button {
+    margin: 0;
+    height: 100%;
+    box-shadow: none;
+    border-radius: none;
+}

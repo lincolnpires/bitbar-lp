@@ -1,0 +1,16 @@
+<ion-content>
+    <div class="pin-wrapper">
+        <p class="info">Selecione uma região</p>
+        <div class="pin">
+            <img src="assets/img/pin@3x.png" />
+        </div>
+    </div>
+    <div id="map_canvas">
+        <div class="float-button" *ngIf="isOnline">
+            <button ion-button ion-icon icon-left black large round (click)="findBar()">
+                Encontrar um bar
+                <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+        </div>
+    </div>
+</ion-content>
